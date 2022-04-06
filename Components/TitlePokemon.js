@@ -12,10 +12,9 @@ export default function TitlePokemon(props) {
     const [pokemonImg, setPokemonImg] = useState(null)
 
     if (pokemonDatas.length === 0) {
-
-            getPokemons(url).then(data => {
-                setPokemonDatas(data)
-                setPokemonImg(data.sprites.front_default)
+            getPokemons(url).then(datas => {
+                setPokemonDatas(datas)
+                setPokemonImg(datas.sprites.front_default)
             })
 
     }

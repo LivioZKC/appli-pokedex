@@ -21,15 +21,22 @@ export default function PokemonDetails(props) {
         return <Text key={index}>{item.ability.name}</Text>;
     });
 
-    /*const PokemonGameIndex = pokemonDatas.game_indices.map((item, index) => {
+    const PokemonTypes = pokemonDatas.abilities.map((item, index) => {
+        console.log(item.slot);
+        // const typeWater = pokemonDatas.abilities.slot[1];
+        /*return <Text key={index}>{item.name}</Text>;*/
+    });
+
+    const PokemonGameIndex = pokemonDatas.game_indices.map((item, index) => {
         console.log(item.game_index.name);
         return <Text key={index}>{item.game_index.name}</Text>;
-    });
+    })
 
     const PokemonGameVersion = pokemonDatas.version.map((item, index) => {
         console.log(item.version.name);
         return <Text key={index}>{item.version.name}</Text>;
-    });*/
+    });
+
 
 
     return (
@@ -37,12 +44,13 @@ export default function PokemonDetails(props) {
 
        <View style={styles.BlockDetails}>
 
-           { ImagePokemon ?
-               ( <Image style={styles.images} source={{uri : ImagePokemon}} /> ):
-               ( <Image style={styles.images} source={ baseimage } /> )
-           }
+
+               { ImagePokemon ?
+                   ( <Image style={styles.images} source={{uri : ImagePokemon}} /> ):
+                   ( <Image style={styles.images} source={ baseimage } /> )
+               }
             <Text style={styles.PokemonName}>{pokemonDatas.name}</Text>
-            <Text style={styles.PokemonCharacteristic}>{PokemonAbilities}</Text>
+            <Text style={styles.PokemonAbilities}>{PokemonAbilities}</Text>
            {/* <Text style={styles.PokemonCharacteristic}>{PokemonGameIndex}</Text>
             <Text style={styles.PokemonCharacteristic}>{PokemonGameVersion}</Text>*/}
         </View>
@@ -60,5 +68,11 @@ const styles = StyleSheet.create({
         borderRadius: 50,
         width: 300,
         height: 300,
+    },
+    PokemonName: {
+        fontSize: 18,
+        textTransform: "uppercase",
+        paddingTop: 10,
+        paddingBottom: 20,
     }
 });
