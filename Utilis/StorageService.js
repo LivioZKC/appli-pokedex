@@ -1,4 +1,3 @@
-/*
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
 export const storeData = async (key, value) => {
@@ -29,4 +28,4 @@ export const eraseData = async (key, value) => {
     } catch (error){
         console.log("error eraseData", error)
     }
-}*/
+}
