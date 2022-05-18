@@ -21,6 +21,7 @@ export default function Home(props) {
             setListPokemon([...listPokemon, ...datas.results])
             setNextPage(datas.next)
         })
+
     }
 
     return (
